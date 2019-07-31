@@ -68,25 +68,39 @@ export default {
             name: that.ruleForm.username,
             password: that.ruleForm.pass
           };
-          that.$axios
-            .post("/Admin/login", that.qs.stringify(params))
-            .then(function(response) {
-              if (response.data.indexOf("账号或者密码错误") != -1) {
-                that.$message.error("账号或者密码错误");
-              }
-              if (response.data.indexOf("登录成功") != -1) {
-                that.$message({
-                  message: "登录成功",
-                  type: "success"
-                });
-                sessionStorage.setItem("nickname", that.ruleForm.username);
-                that.$store.commit("setName", that.ruleForm.username);
-                that.$router.push({ path: "/index" });
-              }
-            })
-            .catch(function(error) {
-              console.log(error);
+          if (params.name == "admin" && params.password == "123456") {
+            that.$message({
+              message: "登录成功",
+              type: "success"
             });
+            sessionStorage.setItem("nickname", that.ruleForm.username);
+            that.$store.commit("setName", that.ruleForm.username);
+            that.$router.push({ path: "/index" });
+          }else{
+             that.$message({
+              message: "登录失败",
+              type: "error"
+            });
+          }
+          // that.$axios
+          //   .post("/Admin/login", that.qs.stringify(params))
+          //   .then(function(response) {
+          //     if (response.data.indexOf("账号或者密码错误") != -1) {
+          //       that.$message.error("账号或者密码错误");
+          //     }
+          //     if (response.data.indexOf("登录成功") != -1) {
+          //       that.$message({
+          //         message: "登录成功",
+          //         type: "success"
+          //       });
+          //       sessionStorage.setItem("nickname", that.ruleForm.username);
+          //       that.$store.commit("setName", that.ruleForm.username);
+          //       that.$router.push({ path: "/index" });
+          //     }
+          //   })
+          //   .catch(function(error) {
+          //     console.log(error);
+          //   });
         } else {
           console.log("用户名或密码不正确!");
           return false;
