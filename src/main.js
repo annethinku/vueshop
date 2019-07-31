@@ -26,6 +26,9 @@ import 'quill/dist/quill.bubble.css'
  
 Vue.use(VueQuillEditor, /* { default global options } */)
 
+import VCharts from 'v-charts'
+Vue.use(VCharts)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

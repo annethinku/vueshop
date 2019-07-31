@@ -7,7 +7,9 @@
       <el-tab-pane label="礼品卡券" name="third">礼品卡券</el-tab-pane>
       <el-tab-pane label="健康生活" name="fourth">健康生活</el-tab-pane>
     </el-tabs>
-    <el-button type="primary" @click="addPro">添加商品</el-button>
+    <keep-alive>
+        <el-button type="primary" @click="addPro">添加商品</el-button>
+    </keep-alive>
     <el-table :data="tableData" border style="width: 100%;margin-top:20px;">
       <el-table-column fixed prop="name" label="名称"></el-table-column>
       <el-table-column prop="sort" label="所属分类"></el-table-column>

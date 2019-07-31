@@ -16,7 +16,7 @@
       <el-form-item label="名称" prop="name">
         <el-input v-model="ruleForm.name" placeholder="请填写商品名称"></el-input>
       </el-form-item>
-      <el-form-item label="所属分类" prop="region">
+      <el-form-item label="所属分类" prop="sort">
         <el-select v-model="ruleForm.sort" placeholder="请选择所属分类">
           <el-option label="个性好礼" value="个性好礼"></el-option>
           <el-option label="创意定制" value="创意定制"></el-option>
@@ -159,13 +159,13 @@ export default {
         content: [
           { required: true, message: "请输入商品描述", trigger: "blur" }
         ]
-      }
+      },
     };
   },
   computed: {
     editor() {
       return this.$refs.myQuillEditor.quill;
-    }
+    },
   },
   mounted() {
     // console.log("this is current quill instance object", this.editor);

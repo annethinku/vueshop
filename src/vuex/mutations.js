@@ -4,5 +4,8 @@ export default{
     },
     setData(state,obj){
        state.SET_DATA=obj;
+    },
+    addNum(state,num){
+      state.count=num;
     }
 }

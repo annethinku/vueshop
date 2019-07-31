@@ -5,6 +5,8 @@ import index from '@/components/index/index'
 import product from '@/components/inRoute/product/product'
 import psort from '@/components/inRoute/psort/psort'
 import addProduct from '@/components/inRoute/addProduct/addProduct'
+import order from '@/components/inRoute/order/order'
+import xltongji from '@/components/inRoute/xltongji/xltongji'
 
 Vue.use(Router)
 
@@ -32,6 +34,14 @@ export default new Router({
         path: '/addProduct',
         name: 'addProduct',
         component: addProduct
+      },{
+        path: '/order',
+        name: 'order',
+        component: order
+      },{
+        path: '/xltongji',
+        name: 'xltongji',
+        component: xltongji
       }]
     }
   ]
