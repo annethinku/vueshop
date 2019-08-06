@@ -109,18 +109,9 @@
 
         <el-main>
           <router-view></router-view>
-          <!-- <el-row>
-            <el-button type="primary" @click="btns1">主要按钮</el-button>
-            <el-button type="success" @click="btns1">成功按钮</el-button>
-            <el-button type="info" @click="btns1">信息按钮</el-button>
-          </el-row>-->
         </el-main>
       </el-container>
     </el-container>
-    <!-- <my-mask :flag="flag" @rflag="rflag">
-      <div slot="title" class="titleSty">{{title}}</div>
-      <div slot="content" class="contentSty">{{content}}</div>
-    </my-mask>-->
     <el-dialog title="修改密码" :visible.sync="dialogTableVisible">
       <el-form
         :model="ruleForm"
@@ -148,7 +139,7 @@
   </div>
 </template>
 <script>
-import myMask from "../mask/mask";
+
 export default {
   data() {
     var oldpass = (rule, value, callback) => {
@@ -295,9 +286,6 @@ export default {
 
     return {
       nickname: "",
-      flag: false,
-      title: "",
-      content: "",
       isCollapse: false,
       navAll: navs,
       dialogTableVisible: false,
@@ -314,7 +302,7 @@ export default {
     };
   },
   components: {
-    "my-mask": myMask
+
   },
   mounted() {
     //   未登录状态跳转登录
@@ -373,14 +361,6 @@ export default {
         this.dialogTableVisible = true;
       }
     }
-    // rflag(val) {
-    //   this.flag = val;
-    // },
-    // btns1(e) {
-    //   this.flag = true;
-    //   this.title = e.toElement.innerText;
-    //   this.content = "内容：" + e.toElement.innerText;
-    // }
   }
 };
 </script>

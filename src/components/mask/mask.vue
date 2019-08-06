@@ -2,7 +2,7 @@
   <div>
     <div class="mask" v-if="flag">
       <div class="m-center">
-        <slot name="title"></slot>
+        <div class="titleSty">{{title}}提示</div>
         <slot name="content"></slot>
         <div class="btns">
             <el-button type="primary" @click="cancelMask">确定</el-button>
@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-    props:['flag'],
+    props:['flag','title'],
     methods:{
         cancelMask(){
           this.$emit('rflag',false);
