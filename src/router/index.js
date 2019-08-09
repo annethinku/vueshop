@@ -7,6 +7,7 @@ import psort from '@/components/inRoute/psort/psort'
 import addProduct from '@/components/inRoute/addProduct/addProduct'
 import order from '@/components/inRoute/order/order'
 import xltongji from '@/components/inRoute/xltongji/xltongji'
+import practice from '@/components/practice/practice'
 
 Vue.use(Router)
 
@@ -42,6 +43,10 @@ export default new Router({
         path: '/xltongji',
         name: 'xltongji',
         component: xltongji
+      },{
+        path: '/practice',
+        name: 'practice',
+        component: practice
       }]
     }
   ]

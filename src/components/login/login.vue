@@ -17,7 +17,7 @@
           <el-input v-model="ruleForm.username"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="pass" class="redItem">
-          <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+          <el-input type="password" v-model="ruleForm.pass" @keyup.native.enter="submitForm('ruleForm')"></el-input>
         </el-form-item>
         <el-form-item class="btnMt">
           <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
@@ -60,6 +60,7 @@ export default {
   },
   methods: {
     submitForm(formName) {
+      console.log('aaa');
       let that = this;
       that.$refs[formName].validate(valid => {
         if (valid) {
